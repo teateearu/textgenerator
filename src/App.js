@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Output from './Components/Output';
 import './App.css';
 
 class App extends Component {
@@ -7,7 +8,6 @@ class App extends Component {
     super(props);
     this.state = {
       paras: 4,
-      html: true,
       text: ''
     }
   }
@@ -16,7 +16,7 @@ class App extends Component {
     this.getSampleText();
   }
   getSampleText(){
-    axios.get('http://hipsterjesus.com/api?paras='+this.state.paras+'/html='+this.state.html)
+    axios.get('http://skateipsum.com/get/'+this.state.paras)
       .then((response) => {
         this.setState({text: response.data.text}, function(){
           console.log(this.state);
@@ -30,7 +30,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        Hello
+        <Output value={this.state.text} />
       </div>
     );
   }
