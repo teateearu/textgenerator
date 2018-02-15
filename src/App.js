@@ -8,6 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       paras: 4,
+      html: true,
       text: ''
     }
   }
@@ -15,17 +16,17 @@ class App extends Component {
   componentWillMount(){
     this.getSampleText();
   }
-  // getSampleText(){
-  //   axios.get('http://skateipsum.com/get/'+this.state.paras)
-  //     .then((response) => {
-  //       this.setState({text: response.data.text}, function(){
-  //         console.log(this.state);
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     })
-  // }
+  getSampleText(){
+    axios.get('http://hipsterjesus.com/api?paras='+this.state.paras+'/html='+this.state.html)
+      .then((response) => {
+        this.setState({text: response.data.text}, function(){
+          console.log(this.state);
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
 
   render() {
     return (
