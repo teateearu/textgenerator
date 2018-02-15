@@ -15,17 +15,17 @@ class App extends Component {
   componentWillMount(){
     this.getSampleText();
   }
-  getSampleText(){
-    axios.get('http://skateipsum.com/get/'+this.state.paras)
-      .then((response) => {
-        this.setState({text: response.data.text}, function(){
-          console.log(this.state);
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }
+  // getSampleText(){
+  //   axios.get('http://skateipsum.com/get/'+this.state.paras)
+  //     .then((response) => {
+  //       this.setState({text: response.data.text}, function(){
+  //         console.log(this.state);
+  //       });
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     })
+  // }
 
   render() {
     return (
