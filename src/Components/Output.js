@@ -7,6 +7,7 @@ class Output extends Component{
       value: props.value
     }
   }
+  
 
   render(){
     return (
